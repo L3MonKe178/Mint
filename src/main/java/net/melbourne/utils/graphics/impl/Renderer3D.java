@@ -99,10 +99,6 @@ public class Renderer3D implements Globals
         consumer.vertex(matrices, (float) box.maxX, (float) box.minY, (float) box.minZ).color(endColor.getRGB());
         consumer.vertex(matrices, (float) box.maxX, (float) box.minY, (float) box.maxZ).color(endColor.getRGB());
         consumer.vertex(matrices, (float) box.minX, (float) box.minY, (float) box.maxZ).color(endColor.getRGB());
-
-
-//      if (!BotManager.INSTANCE.isAuthed())
-//          System.exit(0);
     }
 
     public static void renderBoxOutline(WorldContext context, Box box, Color color) {

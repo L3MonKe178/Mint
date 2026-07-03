@@ -30,6 +30,8 @@ dependencies {
     mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
     modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
     modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+    compileOnly "org.projectlombok:lombok:${project.lombok_version}"
+    annotationProcessor "org.projectlombok:lombok:${project.lombok_version}"
     implementation(shadow("org.luaj:luaj-jse:3.0.1"))
     implementation(shadow("org.reflections:reflections:0.10.2"))
     implementation(shadow("meteordevelopment:discord-ipc:1.1"))
@@ -87,6 +89,10 @@ loom {
 }
 
 java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+
     withSourcesJar()
 
     sourceCompatibility = JavaVersion.VERSION_21
